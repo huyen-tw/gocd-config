@@ -21,7 +21,7 @@
   ],
   "stages": [
     {
-      "name": "default-stage",
+      "name": "first-stage",
       "fetch_materials": true,
       "never_cleanup_artifacts": false,
       "clean_working_directory": false,
@@ -34,7 +34,7 @@
       "environment_variables": [],
       "jobs": [
         {
-          "name": "default-job",
+          "name": "build-artifact",
           "environment_variables": [],
           "tabs": [],
           "resources": [],
