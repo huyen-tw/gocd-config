@@ -1,0 +1,62 @@
+{
+  "group": "test",
+  "name": "repo-pipeline",
+  "display_order_weight": -1.0,
+  "label_template": "${COUNT}",
+  "lock_behavior": "none",
+  "environment_variables": [],
+  "parameters": [],
+  "materials": [
+    {
+      "url": "git@github.com:gocd-contrib/getting-started-repo.git",
+      "branch": "master",
+      "shallow_clone": false,
+      "filter": {
+        "ignore": [],
+        "includes": []
+      },
+      "auto_update": true,
+      "type": "git"
+    }
+  ],
+  "stages": [
+    {
+      "name": "default-stage",
+      "fetch_materials": true,
+      "never_cleanup_artifacts": false,
+      "clean_working_directory": false,
+      "approval": {
+        "type": "success",
+        "users": [],
+        "roles": [],
+        "allow_only_on_success": false
+      },
+      "environment_variables": [],
+      "jobs": [
+        {
+          "name": "default-job",
+          "environment_variables": [],
+          "tabs": [],
+          "resources": [],
+          "artifacts": [
+            {
+              "source": "my-artifact.html",
+              "destination": "",
+              "type": "build"
+            }
+          ],
+          "timeout": 0.0,
+          "tasks": [
+            {
+              "command": "./build",
+              "timeout": -1.0,
+              "arguments": [],
+              "run_if": "passed",
+              "type": "exec"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
